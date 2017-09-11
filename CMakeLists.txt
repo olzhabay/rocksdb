@@ -918,3 +918,8 @@ option(WITH_TOOLS "build with tools" ON)
 if(WITH_TOOLS)
   add_subdirectory(tools)
 endif()
+
+add_executable(tmp_example examples/simple_example.cc)
+target_link_libraries(tmp_example ${ROCKSDB_STATIC_LIB})
+
+add_subdirectory(quartz/src/lib)
