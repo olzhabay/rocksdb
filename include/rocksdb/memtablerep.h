@@ -257,6 +257,25 @@ class SkipListFactory : public MemTableRepFactory {
   const size_t lookahead_;
 };
 
+
+// Skip list to store in NVRAM, using pmalloc
+
+class NVSkipListFactory : public MemTableRepFactory {
+ public:
+  explicit NVSkipListFactory(size_t lookahead = 0) : lookahead_(lookahead) {}
+
+  using MemTableRepFactory::CreateMemTableRep;
+  virtual MemTableRep* CreateMemTableRep(const MemTableRep::KeyComparator&,
+                                         Allocator*, const SliceTransform*,
+                                         Logger* logger) override;
+  virtual const char* Name() const override { return "NVSkipListFactory"; }
+
+  bool IsInsertConcurrentlySupported() const override { return true; }
+  
+ private:
+  const size_t lookahead_;
+};
+
 #ifndef ROCKSDB_LITE
 // This creates MemTableReps that are backed by an std::vector. On iteration,
 // the vector is sorted. This is useful for workloads where iteration is very
