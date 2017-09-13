@@ -11,10 +11,10 @@ class ExperimentalTableFactory : public TableFactory {
   ~ExperimentalTableFactory() {}
 
   explicit ExperimentalTableFactory(
-      const NaiveTableOptions& _table_options = NaiveTableOptions())
+      const ExperimentalTableOptions& _table_options = ExperimentalTableOptions())
       : table_options_(_table_options) {}
 
-  const char* Name() const override { return "NaiveTable"; }
+  const char* Name() const override { return "ExperimentalTable"; }
 
   Status NewTableReader(const TableReaderOptions& table_reader_options,
                         unique_ptr<RandomAccessFileReader>&& file,
@@ -27,7 +27,7 @@ class ExperimentalTableFactory : public TableFactory {
 
   std::string GetPrintableTableOptions() const override;
 
-  const NaiveTableOptions& table_options() const;
+  const ExperimentalTableOptions& table_options() const;
 
   Status SanitizeOptions(const DBOptions& dp_opts,
                          const ColumnFamilyOptions& cf_opts) const override {
@@ -42,10 +42,10 @@ class ExperimentalTableFactory : public TableFactory {
   }
 
  private:
-  NaiveTableOptions table_options_;
+  ExperimentalTableOptions table_options_;
 };
 
-struct NaiveTableOptions {
+struct ExperimentalTableOptions {
 };
 
 } // namespace rocksdb

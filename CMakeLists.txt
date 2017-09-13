@@ -473,6 +473,7 @@ set(SOURCES
         table/table_properties.cc
         table/exp_table_factory.cc
         table/exp_table_builder.cc
+        table/exp_table_reader.cc
         table/two_level_iterator.cc
         tools/db_bench_tool.cc
         tools/dump/db_dump_tool.cc
