@@ -1,8 +1,8 @@
-#include "naive_table_builder.h"
+#include "exp_table_builder.h"
 
 namespace rocksdb {
 
-NaiveTableBuilder::NaiveTableBuilder(
+ExperimentalTableBuilder::ExperimentalTableBuilder(
     const ImmutableCFOptions &ioptions, uint32_t column_family_id,
     WritableFileWriter *file, uint32_t user_key_len,
     const std::string &column_family_name)
@@ -16,27 +16,27 @@ NaiveTableBuilder::NaiveTableBuilder(
   properties_.column_family_name = column_family_name;
 }
 
-void NaiveTableBuilder::Add(const Slice &key, const Slice &value) {
+void ExperimentalTableBuilder::Add(const Slice &key, const Slice &value) {
 
 }
 
-Status NaiveTableBuilder::status() const {
+Status ExperimentalTableBuilder::status() const {
   return Status();
 }
 
-Status NaiveTableBuilder::Finish() {
+Status ExperimentalTableBuilder::Finish() {
   return Status();
 }
 
-void NaiveTableBuilder::Abandon() {
+void ExperimentalTableBuilder::Abandon() {
 
 }
 
-uint64_t NaiveTableBuilder::NumEntries() const {
+uint64_t ExperimentalTableBuilder::NumEntries() const {
   return 0;
 }
 
-uint64_t NaiveTableBuilder::FileSize() const {
+uint64_t ExperimentalTableBuilder::FileSize() const {
   return 0;
 }
 

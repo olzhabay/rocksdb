@@ -471,8 +471,8 @@ set(SOURCES
         table/plain_table_reader.cc
         table/sst_file_writer.cc
         table/table_properties.cc
-        table/naive_table_factory.cc
-        table/naive_table_builder.cc
+        table/exp_table_factory.cc
+        table/exp_table_builder.cc
         table/two_level_iterator.cc
         tools/db_bench_tool.cc
         tools/dump/db_dump_tool.cc

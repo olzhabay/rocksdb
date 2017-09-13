@@ -6,11 +6,11 @@ using std::unique_ptr;
 
 namespace rocksdb {
 
-class NaiveTableFactory : public TableFactory {
+class ExperimentalTableFactory : public TableFactory {
  public:
-  ~NaiveTableFactory() {}
+  ~ExperimentalTableFactory() {}
 
-  explicit NaiveTableFactory(
+  explicit ExperimentalTableFactory(
       const NaiveTableOptions& _table_options = NaiveTableOptions())
       : table_options_(_table_options) {}
 

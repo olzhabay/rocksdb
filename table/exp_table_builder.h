@@ -8,13 +8,13 @@
 
 namespace rocksdb {
 
-class NaiveTableBuilder : public TableBuilder {
+class ExperimentalTableBuilder : public TableBuilder {
  public:
-  NaiveTableBuilder(const ImmutableCFOptions& ioptions,
+  ExperimentalTableBuilder(const ImmutableCFOptions& ioptions,
                     uint32_t column_family_id, WritableFileWriter* file,
                     uint32_t user_key_len, const std::string& column_family_name);
 
-  ~NaiveTableBuilder() { }
+  ~ExperimentalTableBuilder() { }
 
   void Add(const Slice& key, const Slice& value) override;
 
@@ -38,8 +38,8 @@ class NaiveTableBuilder : public TableBuilder {
 
 
 
-  NaiveTableBuilder(const NaiveTableBuilder&) = delete;
-  void operator=(const NaiveTableBuilder&) = delete;
+  ExperimentalTableBuilder(const ExperimentalTableBuilder&) = delete;
+  void operator=(const ExperimentalTableBuilder&) = delete;
 
 };
 
