@@ -1,7 +1,3 @@
-//
-// Created by olzhas on 9/12/17.
-//
-
 #include "exp_table_factory.h"
 #include "exp_table_builder.h"
 #include "exp_table_reader.h"
